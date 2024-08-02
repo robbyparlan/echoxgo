@@ -1,8 +1,12 @@
 package router
 
-import "github.com/labstack/echo/v4"
+import (
+	utils "echoxgo/src/utils/constants"
+
+	"github.com/labstack/echo/v4"
+)
 
 func AllRoutes(e *echo.Echo) {
-	route := e.Group("/api/v1")
+	route := e.Group(utils.ApiPrefixVersion)
 	UserRoutes(route)
 }

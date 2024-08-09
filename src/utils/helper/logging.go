@@ -27,9 +27,7 @@ func init() {
 
 		Logger.SetOutput(LogWriteFile)
 
-		Logger.SetFormatter(&logrus.TextFormatter{
-			FullTimestamp: true,
-		})
+		Logger.SetFormatter(&logrus.JSONFormatter{})
 		Logger.SetLevel(logrus.InfoLevel)
 	}
 }

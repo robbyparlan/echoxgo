@@ -1,14 +1,12 @@
 package router
 
 import (
-	"net/http"
+	UserController "echoxgo/src/app/user/controller"
 
 	"github.com/labstack/echo/v4"
 )
 
 func UserRoutes(e *echo.Group) {
 	userGroup := e.Group("/user")
-	userGroup.GET("/list", func(c echo.Context) error {
-		return c.String(http.StatusOK, "user list")
-	})
+	userGroup.POST("/list", UserController.ListUser())
 }
